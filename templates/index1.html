@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Start</title>
+</head>
+<body>
+<div class = "ask"> <br>
+    <form id="MyForm">
+        <h1>Ваше имя:</h1> <br>
+        <input сlass = "Name" type = 'text' id="fname" name="fname"> <br>
+        <button сlass = "Click" type = "button" value = "Sumbit" onclick="GetName()">Отправить</button> <br>
+    </form>
+</div>
+<script>function GetName(){
+    var x = document.getElementById("fname").value;
+    var y = document.querySelector("h1");
+    if(x){
+        localStorage.setItem("name", x);
+        window.location.href = "Tutorial";
+    }
+    else
+    {
+        alert("Введите имя!");
+    }
+
+}
+</script>
+</body>
+</html>
